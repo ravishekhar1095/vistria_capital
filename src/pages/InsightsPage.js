@@ -6,9 +6,9 @@ const insights = [
       'Dwarka Expressway micro-markets absorbed over 70% of new luxury inventory within 90 days of launch across 2024, outpacing Golf Course Extension in velocity.',
   },
   {
-    title: 'JLL Outlook Watch',
+    title: 'Luxury Outlook Watch',
     detail:
-      'JLL India’s 2024 Real Estate Outlook flags Gurugram as the NCR epicentre for luxury demand, driven by infrastructure upgrades and integrated township formats.',
+      'Independent 2024 real estate outlooks flag Gurugram as the NCR epicentre for luxury demand, driven by infrastructure upgrades and integrated township formats.',
   },
   {
     title: 'Investor Spotlight',
@@ -28,7 +28,7 @@ const insights = [
 ];
 
 const dataPoints = [
-  'JLL Research underlines that integrated, mixed-use precincts will dominate NCR capital flows through 2025, favouring Dwarka Expressway and Golf Course belts.',
+  'Leading research underlines that integrated, mixed-use precincts will dominate NCR capital flows through 2025, favouring Dwarka Expressway and Golf Course belts.',
   '₹36,000 per sq ft benchmarks achieved on Golf Course Road for branded residences with experiential amenities.',
   'Average capital appreciation of 21% recorded on Dwarka Expressway luxury assets between FY22 and FY24 as per ANAROCK research.',
   'Premium housing inventory (₹3 Cr+) represents 28% of NCR launches in H1 2024, reflecting the shift to larger configurations.',
@@ -60,7 +60,7 @@ const InsightsPage = () => (
     <section className="research-highlights">
       <div className="section-header">
         <h2>2024 Delhi NCR market takeaways</h2>
-        <p>Key observations from Knight Frank, ANAROCK, and JLL research releases.</p>
+        <p>Key observations from Knight Frank, ANAROCK, and other independent research releases.</p>
       </div>
       <ul className="data-point-list">
         {dataPoints.map((point) => (

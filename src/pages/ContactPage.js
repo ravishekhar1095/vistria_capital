@@ -69,7 +69,7 @@ const ContactPage = () => (
         <div>
           <h3>Visit us</h3>
           <p>
-            Vistria Capital Experience Lounge
+            Vistria Capital 
             <br />
             Two Horizon Center, Golf Course Road, Gurugram
           </p>
@@ -77,9 +77,9 @@ const ContactPage = () => (
         <div>
           <h3>Connect</h3>
           <p>
-            +91 124 555 8800
+            +91 9560700707
             <br />
-            concierge@vistriacapital.com
+            info@vistriacapital.com
           </p>
         </div>
         <div>

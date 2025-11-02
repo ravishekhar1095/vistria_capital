@@ -27,8 +27,8 @@ export const newsItems = [
     title: 'Grade-A leasing rebounds across Gurugram hubs',
     date: '02 Sep 2024',
     summary:
-      'JLL’s Office Market Snapshot highlights Gurugram capturing over 40% of NCR’s quarterly leasing, led by BFSI and tech occupiers expanding in Udyog Vihar and Cyber City.',
-    source: 'JLL India Office Market Snapshot',
-    link: 'https://www.jll.co.in/en/trends-and-insights/research',
+      'Independent market trackers note Gurugram capturing over 40% of NCR’s quarterly leasing, led by BFSI and tech occupiers expanding in Udyog Vihar and Cyber City.',
+    source: 'NCR Office Market Snapshot',
+    link: 'https://www.cbre.co.in/insights',
   },
 ];

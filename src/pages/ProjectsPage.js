@@ -2,7 +2,7 @@ import { projects } from '../data/projects';
 
 const ProjectsPage = () => {
   const focusHighlights = [
-    'Absorption velocity tracked through JLL Delhi NCR market updates each quarter.',
+    'Absorption velocity tracked through quarterly Delhi NCR market updates.',
     'IGBC / GRIHA aligned apartments to future-proof sustainability goals.',
     'Ticket sizes curated for ₹3 Cr \u2013 ₹12 Cr mandates with concierge execution.',
   ];
@@ -14,7 +14,7 @@ const ProjectsPage = () => {
         <h1>Gurugram&rsquo;s marquee residences under Vistria Capital</h1>
         <p className="page-subtitle">
           Explore curated assets across Dwarka Expressway, Golf Course Road, and emerging micro-markets. Every
-          listing is diligence-ready using the due diligence discipline applied by JLL&rsquo;s global capital
+          listing is diligence-ready using the due diligence discipline applied by institutional global
           markets teams.
         </p>
         <div className="page-pills">

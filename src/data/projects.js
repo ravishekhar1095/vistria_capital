@@ -1,5 +1,15 @@
 export const projects = [
   {
+    name: 'Trevoc Royal Residences',
+    location: 'Sector 56, Golf Course Road, Gurugram',
+    configuration: '3 & 4 BHK residences by Trevoc',
+    size: '2,642-3,380 sq ft',
+    price: '₹ 6.60 Cr* onwards',
+    link: 'https://www.trevoc.in/',
+    image:
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
     name: 'Estate 360',
     location: 'Sector 36A, Dwarka Expressway, Gurugram',
     configuration: '3 & 4 BHK luxury apartments & penthouses',
@@ -17,7 +27,7 @@ export const projects = [
     price: '₹ 4.01 Cr* onwards',
     link: 'https://andlayestates.com/luxury-apartments-in-gurgaon.html?utm_source=chatgpt.com',
     image:
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1529429617124-aee1718790ab?auto=format&fit=crop&w=1200&q=80',
   },
   {
     name: 'BPTP Amstoria / Verti-Greens',

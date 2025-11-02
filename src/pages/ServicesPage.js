@@ -2,12 +2,12 @@ const services = [
   {
     title: 'Capital Markets & Investments',
     detail:
-      'Deal origination, bid strategy, and capital stack advisory that mirror JLL’s global capital markets methodology, tailored to private mandates.',
+      'Deal origination, bid strategy, and capital stack advisory that mirror global capital markets methodologies, tailored to private mandates.',
   },
   {
     title: 'Residential Portfolio Strategy',
     detail:
-      'Micro-market entry frameworks, pricing benchmarks, and hold/exit modelling backed by NCR absorption data and JLL research insights.',
+      'Micro-market entry frameworks, pricing benchmarks, and hold/exit modelling backed by NCR absorption data and proprietary research insights.',
   },
   {
     title: 'Transaction Governance',
@@ -27,13 +27,13 @@ const services = [
   {
     title: 'Sustainability & ESG Advisory',
     detail:
-      'IGBC/GRIHA compliance, decarbonisation pathways, and climate resilience diagnostics aligned with JLL Sustainability Services guidance.',
+      'IGBC/GRIHA compliance, decarbonisation pathways, and climate resilience diagnostics aligned with global sustainability guidance.',
   },
 ];
 
 const serviceHighlights = [
   'Single mandate team spanning strategy, research, and capital',
-  'Governance guardrails adopted from JLL enterprise playbooks',
+  'Independent Indian brokerage heritage (formerly Andlay Estates)',
   'Partnership network spanning legal, wealth, and design collaborators',
 ];
 
@@ -43,7 +43,7 @@ const ServicesPage = () => (
       <p className="page-kicker">Advisory Services</p>
       <h1>Bespoke intelligence for high-performing real estate portfolios</h1>
       <p className="page-subtitle">
-        Vistria Capital fuses the rigour of JLL&rsquo;s integrated services model with a boutique desk dedicated
+        Vistria Capital fuses the rigour of integrated services models with a boutique desk dedicated
         to luxury residential investors in Delhi NCR.
       </p>
       <div className="page-pills">

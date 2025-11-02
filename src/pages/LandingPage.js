@@ -5,13 +5,13 @@ const advisoryPillars = [
   {
     title: 'Capital Markets Advisory',
     detail:
-      'Portfolio optimisation, asset dispositions, and bespoke investments modeled on JLL’s institutional playbooks.',
+      'Portfolio optimisation, developer collaborations, and bespoke investments modeled on our institutional-grade playbooks as a trusted channel partner.',
     cta: { label: 'Explore projects', to: '/projects' },
   },
   {
     title: 'Occupier & Lifestyle Solutions',
     detail:
-      'End-to-end buyer representation, relocation concierge, and experience design inspired by JLL&rsquo;s integrated services.',
+      'End-to-end buyer representation, relocation concierge, and experience design delivered by an integrated in-house team with on-ground legacy.',
     cta: { label: 'View services', to: '/services' },
   },
   {
@@ -24,8 +24,8 @@ const advisoryPillars = [
 
 const differentiators = [
   {
-    label: 'Data-first advisory',
-    copy: 'Local absorption, pricing velocity, and policy signals distilled from JLL and partner research hubs.',
+    label: 'Data-first brokerage',
+    copy: 'Local absorption, pricing velocity, and policy signals distilled from in-house research and partner intelligence hubs.',
   },
   {
     label: 'Sustainability focus',
@@ -33,7 +33,36 @@ const differentiators = [
   },
   {
     label: 'On-ground execution',
-    copy: 'Developer negotiations, legal diligence, and possession oversight orchestrated by a dedicated deal desk.',
+    copy: 'Developer negotiations, legal diligence, and possession oversight orchestrated by a dedicated deal desk rooted in NCR relationships.',
+  },
+  {
+    label: 'Legacy & clarity',
+    copy: 'A reimagined Andlay Estates heritage, clearly distinct from the US-based The Vistria Group, LP, while championing Indian luxury buyers.',
+  },
+];
+
+const identityHighlights = [
+  'Formerly Andlay Estates with legacy relationships across NCR developers.',
+  'Independent Indian brokerage, not affiliated with the US-based The Vistria Group, LP.',
+  'Expanding beyond Gurugram into Noida and leisure destinations such as Nainital.',
+  'Progressive, data-led channel partner delivering luxury acquisitions since 2005.',
+];
+
+const videoReels = [
+  {
+    title: 'What Makes BPTP Verti Greens Sector 102 so SPECIAL?',
+    summary: 'BPTP Amstoria Verti Greens — discover the vertical luxury features curated for Sector 102.',
+    src: 'https://www.youtube.com/embed/G4yRkoNT5nU',
+  },
+  {
+    title: 'Gurugram luxury micro-markets',
+    summary: 'Experion NOVA at Windchants – 4 BHK luxury apartments in Gurgaon.',
+    src: 'https://www.youtube.com/embed/koX8msEWBTI',
+  },
+  {
+    title: 'Bhowali Valley Chalets preview',
+    summary: 'TARC Ishva: Luxury living inspired by the golden ratio in Sector 63A, Gurgaon.',
+    src: 'https://www.youtube.com/embed/EfnnBRxR3h4',
   },
 ];
 
@@ -51,13 +80,17 @@ const LandingPage = () => {
       figure: '4 micro-markets',
       caption: 'Priority focus across Dwarka Expressway & Golf Course belts',
     },
+    {
+      figure: '175 units',
+      caption: 'FY22 sales target achieved across premium + luxury launches',
+    },
   ];
 
   return (
     <>
       <section className="hero refined-hero">
         <div className="hero-content">
-          <div className="hero-eyebrow">Inspired by JLL&rsquo;s global advisory model</div>
+          <div className="hero-eyebrow">Institutional-grade advisory model</div>
           <h1>
             Modern luxury real estate advisory crafted for Delhi NCR&rsquo;s most discerning investors
           </h1>
@@ -79,13 +112,22 @@ const LandingPage = () => {
             <span>Research &amp; Insights</span>
           </div>
         </div>
-        <div className="hero-insights">
-          {quickStats.map((item) => (
-            <div key={item.caption}>
-              <span className="figure">{item.figure}</span>
-              <span className="caption">{item.caption}</span>
-            </div>
-          ))}
+        <div className="hero-showcase">
+          <div className="hero-card">
+            <h3>Curated inventory</h3>
+            <p>
+              Channel partner for marquee launches on Golf Course Road, Dwarka Expressway, and Southern Peripheral
+              Road with concierge acquisition management.
+            </p>
+          </div>
+          <div className="hero-stats">
+            {quickStats.map((item) => (
+              <div key={item.caption}>
+                <span className="figure">{item.figure}</span>
+                <span className="caption">{item.caption}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -93,8 +135,9 @@ const LandingPage = () => {
         <div className="brand-promise__lead">
           <h2>See a brighter way with Vistria Capital</h2>
           <p>
-            Taking cues from JLL&rsquo;s integrated practice, we orchestrate advisory mandates that connect
-            capital, opportunities, and sustainability outcomes for long-term wealth stewardship.
+            Taking cues from global integrated practices, we orchestrate advisory mandates that connect capital,
+            opportunities, and sustainability outcomes for long-term wealth stewardship grounded in Gurgaon&rsquo;s
+            most trusted brokerage legacy.
           </p>
         </div>
         <div className="brand-promise__grid">
@@ -111,7 +154,7 @@ const LandingPage = () => {
         <div className="section-header">
           <h2>Integrated advisory pillars</h2>
           <p>
-            Built to mirror the breadth of JLL&rsquo;s service portfolio while staying bespoke to private
+            Built to mirror the breadth of leading international service portfolios while staying bespoke to private
             clients active in Delhi NCR.
           </p>
         </div>
@@ -123,6 +166,46 @@ const LandingPage = () => {
               <Link to={pillar.cta.to} className="text-link">
                 {pillar.cta.label} →
               </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="identity-banner">
+        <div>
+          <span className="identity-pill">Legacy</span>
+          <h2>Vistria Capital (formerly Andlay Estates)</h2>
+          <p>
+            A Gurugram-headquartered luxury real estate brokerage delivering integrity-first advisory while remaining
+            distinctly Indian &mdash; not associated with the US private equity firm The Vistria Group, LP.
+          </p>
+        </div>
+        <ul>
+          {identityHighlights.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="video-reel">
+        <div className="section-header">
+          <h2>Short-form insights &amp; walkthroughs</h2>
+          <p>Reels designed for Instagram-ready storytelling across Gurugram luxury assets and leisure escapes.</p>
+        </div>
+        <div className="reel-grid">
+          {videoReels.map((reel) => (
+            <article key={reel.title} className="reel-card">
+              <div className="reel-frame">
+                <iframe
+                  src={reel.src}
+                  title={reel.title}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <h3>{reel.title}</h3>
+              <p>{reel.summary}</p>
             </article>
           ))}
         </div>
@@ -148,7 +231,7 @@ const LandingPage = () => {
           </div>
           <div className="highlight">
             <h3>Transaction governance</h3>
-            <p>Deal rooms, documentation grids, and milestone reporting patterned on JLL&rsquo;s enterprise standards.</p>
+            <p>Deal rooms, documentation grids, and milestone reporting patterned on enterprise-grade standards.</p>
           </div>
           <div className="highlight">
             <h3>Experience delivery</h3>
@@ -160,7 +243,7 @@ const LandingPage = () => {
       <section className="vastu-experience">
         <div className="vastu-media">
           <iframe
-            src="https://www.youtube.com/embed/HIsM8-6kMGE"
+            src="https://www.youtube.com/embed/zPSwZAQnbIY"
             title="Vastu aligned luxury living"
             loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -170,7 +253,7 @@ const LandingPage = () => {
         <div className="vastu-copy">
           <h2>Vastu-aligned living for elevated wellbeing</h2>
           <p>
-            Drawing on insights from Vastu consultants collaborating with JLL&rsquo;s design advisory teams, Vistria
+            Drawing on insights from Vastu consultants collaborating with our design advisory teams, Vistria
             Capital curates residences that harmonise energy flow with luxury aesthetics. From orienting master
             suites to integrating meditation decks, we ensure your next address nurtures balance, prosperity, and calm.
           </p>
@@ -189,7 +272,7 @@ const LandingPage = () => {
       <section className="news-section">
         <div className="section-header">
           <h2>Live market intel &mdash; Delhi NCR</h2>
-          <p>Curated updates from primary releases across JLL, Knight Frank, ANAROCK, and policy briefings.</p>
+          <p>Curated updates from primary releases across Knight Frank, ANAROCK, and policy briefings.</p>
         </div>
         <div className="news-grid">
           {newsItems.map((item) => (
