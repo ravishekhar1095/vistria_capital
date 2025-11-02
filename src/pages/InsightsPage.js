@@ -1,0 +1,74 @@
+const insights = [
+  {
+    title: 'Quarterly Market Pulse',
+    tone: 'dark',
+    detail:
+      'Dwarka Expressway micro-markets absorbed over 70% of new luxury inventory within 90 days of launch across 2024, outpacing Golf Course Extension in velocity.',
+  },
+  {
+    title: 'JLL Outlook Watch',
+    detail:
+      'JLL India’s 2024 Real Estate Outlook flags Gurugram as the NCR epicentre for luxury demand, driven by infrastructure upgrades and integrated township formats.',
+  },
+  {
+    title: 'Investor Spotlight',
+    detail:
+      'NRIs contributed 44% of transactions above ₹5 Cr in FY24, with GCC-based investors prioritising larger ticket sizes amid favourable currency movements.',
+  },
+  {
+    title: 'Sustainability Lens',
+    detail:
+      'All recommended projects comply with IGBC Platinum or GRIHA 4-star benchmarks, ensuring lower operating costs and long-term value protection.',
+  },
+  {
+    title: 'Capital Markets Watch',
+    detail:
+      'Listed developers in NCR clocked record pre-sales of ₹28,000 Cr in FY24, led by differentiated luxury launches and shrinking unsold stock.',
+  },
+];
+
+const dataPoints = [
+  'JLL Research underlines that integrated, mixed-use precincts will dominate NCR capital flows through 2025, favouring Dwarka Expressway and Golf Course belts.',
+  '₹36,000 per sq ft benchmarks achieved on Golf Course Road for branded residences with experiential amenities.',
+  'Average capital appreciation of 21% recorded on Dwarka Expressway luxury assets between FY22 and FY24 as per ANAROCK research.',
+  'Premium housing inventory (₹3 Cr+) represents 28% of NCR launches in H1 2024, reflecting the shift to larger configurations.',
+];
+
+const InsightsPage = () => (
+  <>
+    <section className="page-hero">
+      <p className="page-kicker">Insights &amp; Research</p>
+      <h1>Intelligence that powers every acquisition mandate</h1>
+      <p className="page-subtitle">
+        We translate on-ground absorption metrics, policy signals, and developer pulse into actionable
+        dashboards for Vistria clients.
+      </p>
+    </section>
+
+    <section className="insights page-section">
+      {insights.map((insight) => (
+        <div
+          key={insight.title}
+          className={`insight-card${insight.tone === 'dark' ? ' dark' : ''}`}
+        >
+          <h3>{insight.title}</h3>
+          <p>{insight.detail}</p>
+        </div>
+      ))}
+    </section>
+
+    <section className="research-highlights">
+      <div className="section-header">
+        <h2>2024 Delhi NCR market takeaways</h2>
+        <p>Key observations from Knight Frank, ANAROCK, and JLL research releases.</p>
+      </div>
+      <ul className="data-point-list">
+        {dataPoints.map((point) => (
+          <li key={point}>{point}</li>
+        ))}
+      </ul>
+    </section>
+  </>
+);
+
+export default InsightsPage;
