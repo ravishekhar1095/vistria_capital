@@ -24,6 +24,21 @@ const ProjectsPage = () => {
         </div>
       </section>
 
+      <section className="projects-highlight">
+        <div className="projects-highlight__frame">
+          <iframe
+            src="https://www.youtube.com/embed/_sq0jrNSvj8?start=20"
+            title="Projects highlight"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
+        <p className="projects-highlight__caption">
+          A quick tour through marquee Gurugram residences we currently steward under the Vistria Capital portfolio.
+        </p>
+      </section>
+
       <section className="projects-section">
         <div className="projects-grid">
           {projects.map((project) => (

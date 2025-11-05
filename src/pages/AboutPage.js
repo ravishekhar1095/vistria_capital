@@ -127,7 +127,7 @@ const AboutPage = () => (
       </div>
     </section>
 
-    <section className="market-reach light-surface">
+    <section className="market-reach light-surface section-animate" style={{ '--delay': '0.48s' }}>
       <div className="section-header">
         <h2>Market footprint</h2>
         <p>Where Vistria Capital (formerly Andlay Estates) is creating impact.</p>
@@ -139,7 +139,7 @@ const AboutPage = () => (
       </ul>
     </section>
 
-    <section className="leadership page-section">
+    <section className="leadership page-section section-animate" style={{ '--delay': '0.6s' }}>
       <div className="section-header">
         <h2>Leadership</h2>
         <p>Abhishiekh Andlay anchors every mandate with legacy relationships and forward-looking vision.</p>

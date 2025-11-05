@@ -11,6 +11,7 @@ import BlogsPage from './pages/BlogsPage';
 import AboutPage from './pages/AboutPage';
 
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>

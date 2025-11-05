@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { newsItems } from '../data/news';
+import { motion } from 'framer-motion';
+import { fadeInUp, simpleFade } from '../utils/motion';
 
 const advisoryPillars = [
   {
@@ -88,12 +90,16 @@ const LandingPage = () => {
 
   return (
     <>
-      <section className="hero refined-hero">
-        <div className="hero-content">
+      <motion.section
+        className="hero refined-hero"
+        variants={fadeInUp(0, 0.45)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.5 }}
+      >
+        <motion.div className="hero-content" variants={simpleFade(0.05)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.6 }}>
           <div className="hero-eyebrow">Institutional-grade advisory model</div>
-          <h1>
-            Modern luxury real estate advisory crafted for Delhi NCR&rsquo;s most discerning investors
-          </h1>
+          <h1>Modern luxury real estate advisory crafted for Delhi NCR&rsquo;s most discerning investors</h1>
           <p className="hero-subtitle">
             Vistria Capital combines institutional-grade research, capital markets intelligence, and concierge
             execution to deliver landmark residences across Gurugram&rsquo;s most resilient neighbourhoods.
@@ -111,8 +117,14 @@ const LandingPage = () => {
             <span>Occupier Solutions</span>
             <span>Research &amp; Insights</span>
           </div>
-        </div>
-        <div className="hero-showcase">
+        </motion.div>
+        <motion.div
+          className="hero-showcase"
+          variants={simpleFade(0.12)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <div className="hero-card">
             <h3>Curated inventory</h3>
             <p>
@@ -128,29 +140,28 @@ const LandingPage = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
-      <section className="brand-promise">
+      <motion.section className="brand-promise" variants={fadeInUp(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
         <div className="brand-promise__lead">
           <h2>See a brighter way with Vistria Capital</h2>
           <p>
-            Taking cues from global integrated practices, we orchestrate advisory mandates that connect capital,
-            opportunities, and sustainability outcomes for long-term wealth stewardship grounded in Gurgaon&rsquo;s
-            most trusted brokerage legacy.
+            Taking cues from global integrated practices, we orchestrate advisory mandates that connect capital, opportunities,
+            and sustainability outcomes for long-term wealth stewardship grounded in Gurgaon&rsquo;s most trusted brokerage legacy.
           </p>
         </div>
-        <div className="brand-promise__grid">
+        <motion.div className="brand-promise__grid" variants={simpleFade(0.15)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
           {differentiators.map((item) => (
             <div key={item.label} className="brand-card">
               <h3>{item.label}</h3>
               <p>{item.copy}</p>
             </div>
           ))}
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
-      <section className="pillars">
+      <motion.section className="pillars" variants={fadeInUp(0.24)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
         <div className="section-header">
           <h2>Integrated advisory pillars</h2>
           <p>
@@ -158,7 +169,7 @@ const LandingPage = () => {
             clients active in Delhi NCR.
           </p>
         </div>
-        <div className="pillars-grid">
+        <motion.div className="pillars-grid" variants={simpleFade(0.18)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
           {advisoryPillars.map((pillar) => (
             <article key={pillar.title} className="pillar-card">
               <h3>{pillar.title}</h3>
@@ -168,16 +179,16 @@ const LandingPage = () => {
               </Link>
             </article>
           ))}
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
-      <section className="identity-banner">
+      <motion.section className="identity-banner" variants={fadeInUp(0.34)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
         <div>
           <span className="identity-pill">Legacy</span>
           <h2>Vistria Capital (formerly Andlay Estates)</h2>
           <p>
-            A Gurugram-headquartered luxury real estate brokerage delivering integrity-first advisory while remaining
-            distinctly Indian &mdash; not associated with the US private equity firm The Vistria Group, LP.
+            A Gurugram-headquartered luxury real estate brokerage delivering integrity-first advisory while remaining distinctly
+            Indian &mdash; not associated with the US private equity firm The Vistria Group, LP.
           </p>
         </div>
         <ul>
@@ -185,9 +196,9 @@ const LandingPage = () => {
             <li key={item}>{item}</li>
           ))}
         </ul>
-      </section>
+      </motion.section>
 
-      <section className="video-reel">
+      <motion.section className="video-reel" variants={fadeInUp(0.42)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
         <div className="section-header">
           <h2>Short-form insights &amp; walkthroughs</h2>
           <p>Reels designed for Instagram-ready storytelling across Gurugram luxury assets and leisure escapes.</p>
@@ -209,10 +220,10 @@ const LandingPage = () => {
             </article>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      <section className="intro light-surface">
-        <div className="intro-card">
+      <motion.section className="intro light-surface" variants={fadeInUp(0.5)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+        <motion.div className="intro-card" variants={simpleFade(0.08)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }}>
           <h2>Invest with conviction</h2>
           <p>
             Each opportunity is screened through regulatory, financial, and ESG lenses, while our transaction
@@ -223,7 +234,7 @@ const LandingPage = () => {
               Discover the mandate journey
             </Link>
           </div>
-        </div>
+        </motion.div>
         <div className="intro-highlights">
           <div className="highlight">
             <h3>Neighbourhood curation</h3>
@@ -238,10 +249,10 @@ const LandingPage = () => {
             <p>Handovers enhanced with design partners, sustainability retrofits, and smart home integrations.</p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="vastu-experience">
-        <div className="vastu-media">
+      <motion.section className="vastu-experience" variants={fadeInUp(0.64)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+        <motion.div className="vastu-media" variants={simpleFade(0.1)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
           <iframe
             src="https://www.youtube.com/embed/zPSwZAQnbIY"
             title="Vastu aligned luxury living"
@@ -249,8 +260,8 @@ const LandingPage = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
-        </div>
-        <div className="vastu-copy">
+        </motion.div>
+        <motion.div className="vastu-copy" variants={simpleFade(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }}>
           <h2>Vastu-aligned living for elevated wellbeing</h2>
           <p>
             Drawing on insights from Vastu consultants collaborating with our design advisory teams, Vistria
@@ -263,18 +274,20 @@ const LandingPage = () => {
             <li>Customisable pooja and meditation suites enhanced with acoustic and lighting design.</li>
             <li>On-demand Vastu audits during layout customization and fit-out stages.</li>
           </ul>
-          <Link to="/contact" className="text-link">
-            Request a Vastu consultation →
-          </Link>
-        </div>
-      </section>
+          <div>
+            <Link to="/contact" className="text-link">
+              Request a Vastu consultation →
+            </Link>
+          </div>
+        </motion.div>
+      </motion.section>
 
-      <section className="news-section">
+      <motion.section className="news-section" variants={fadeInUp(0.74)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
         <div className="section-header">
           <h2>Live market intel &mdash; Delhi NCR</h2>
           <p>Curated updates from primary releases across Knight Frank, ANAROCK, and policy briefings.</p>
         </div>
-        <div className="news-grid">
+        <motion.div className="news-grid" variants={simpleFade(0.1)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
           {newsItems.map((item) => (
             <article key={item.title} className="news-card">
               <header>
@@ -287,8 +300,8 @@ const LandingPage = () => {
               </a>
             </article>
           ))}
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
     </>
   );
 };
