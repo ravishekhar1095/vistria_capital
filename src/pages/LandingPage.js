@@ -3,6 +3,15 @@ import { newsItems } from '../data/news';
 import { motion } from 'framer-motion';
 import { fadeInUp, simpleFade } from '../utils/motion';
 
+const heroMentions = ['Knight Frank India', 'ANAROCK Research', 'CREDAI NCR'];
+
+const socialIcons = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/vistria-capital/', icon: 'https://img.icons8.com/color/48/linkedin.png' },
+  { label: 'Twitter', href: 'https://twitter.com/', icon: 'https://img.icons8.com/color/48/twitter--v1.png' },
+  { label: 'Instagram', href: 'https://instagram.com/', icon: 'https://img.icons8.com/color/48/instagram-new.png' },
+  { label: 'YouTube', href: 'https://www.youtube.com/', icon: 'https://img.icons8.com/color/48/youtube-play.png' },
+];
+
 const advisoryPillars = [
   {
     title: 'Capital Markets Advisory',
@@ -50,6 +59,95 @@ const identityHighlights = [
   'Progressive, data-led channel partner delivering luxury acquisitions since 2005.',
 ];
 
+const momentumHighlights = [
+  {
+    value: '₹2,450 Cr',
+    label: 'Capital placed since 2021',
+    detail: 'Exclusive mandates across Golf Course Road, Dwarka Expressway, and SPR.',
+  },
+  {
+    value: '92 days',
+    label: 'Average closure cycle',
+    detail: 'From concierge brief to signed MoU with curated partners.',
+  },
+  {
+    value: '42 briefs',
+    label: 'Active UHNI buyer mandates',
+    detail: 'Live transactions spanning penthouses, farm estates, and branded villas.',
+  },
+];
+
+const timelineMilestones = [
+  {
+    year: '2021',
+    title: 'Legacy transformation',
+    detail: 'Andlay Estates transitions into Vistria Capital with a sharper investment lens.',
+  },
+  {
+    year: '2022',
+    title: 'Capital desk rollout',
+    detail: 'Dedicated deal desk for institutional referrals launched across NCR.',
+  },
+  {
+    year: '2023',
+    title: 'Leisure expansion',
+    detail: 'Mandates added for Kumaon chalets, Goa villas, and Himalayan retreats.',
+  },
+  {
+    year: '2024',
+    title: 'Dwarka Expressway focus',
+    detail: 'Pipeline prioritises handovers around infrastructure unlock milestones.',
+  },
+];
+
+const microMarkets = [
+  {
+    name: 'Golf Course Road / Ext.',
+    stat: '91% luxury absorption',
+    detail: 'Consistent premium pricing powered by branded residences and global schools.',
+  },
+  {
+    name: 'Dwarka Expressway',
+    stat: '24% QoQ price appreciation',
+    detail: 'Infra-ready corridors attracting NRIs for ready-to-move 4 & 5 BHK assets.',
+  },
+  {
+    name: 'Southern Peripheral Road',
+    stat: '12M sq.ft. under planning',
+    detail: 'Mixed-use masterplans and SCO launches elevating end-user demand.',
+  },
+  {
+    name: 'Noida & Leisure belts',
+    stat: '2 hr connect radius',
+    detail: 'Managed second homes in Nainital, Bhowali, and coastal Goa communities.',
+  },
+];
+
+const partnerAlliances = [
+  { label: 'Knight Frank Research', tag: 'Market intelligence' },
+  { label: 'ANAROCK Channel Partner', tag: 'Primary launches' },
+  { label: 'CREDAI NCR', tag: 'Policy advocacy' },
+  { label: 'Design Bridge', tag: 'Experience staging' },
+];
+
+const conciergePrograms = [
+  {
+    title: 'Private Capital Desk',
+    summary: 'High-touch consulting for family offices seeking trophy assets or yield-led holdings.',
+    bullets: ['Risk-mapped shortlists delivered within 48 hours.', 'Deal rooms with legal + valuation partners.'],
+  },
+  {
+    title: 'Lifestyle Relocation Lab',
+    summary: 'Concierge for globally mobile buyers balancing school, commute, and club ecosystems.',
+    bullets: ['End-to-end tours with hospitality coordination.', 'Post-possession design and automation playbooks.'],
+  },
+  {
+    title: 'Developer Collaboration Studio',
+    summary: 'Structured alliances for boutique developers to reposition premium launches.',
+    bullets: ['Demand simulations & absorption dashboards.', 'On-ground activation & influencer walk-throughs.'],
+  },
+];
+
 const videoReels = [
   {
     title: 'What Makes BPTP Verti Greens Sector 102 so SPECIAL?',
@@ -66,6 +164,46 @@ const videoReels = [
     summary: 'TARC Ishva: Luxury living inspired by the golden ratio in Sector 63A, Gurgaon.',
     src: 'https://www.youtube.com/embed/EfnnBRxR3h4',
   },
+];
+
+const investmentSteps = [
+  {
+    title: 'Neighbourhood curation',
+    detail: 'Focus on growth corridors with proven absorption &mdash; Dwarka Expressway, Golf Course Road, and SPR.',
+  },
+  {
+    title: 'Transaction governance',
+    detail: 'Deal rooms, documentation grids, and milestone reporting patterned on enterprise-grade standards.',
+  },
+  {
+    title: 'Experience delivery',
+    detail: 'Handovers enhanced with design partners, sustainability retrofits, and smart home integrations.',
+  },
+  {
+    title: 'After-sales stewardship',
+    detail: 'Dedicated concierge pods track snag closures, warranties, and personalization requests post-possession.',
+  },
+];
+
+const dueDiligenceChecks = [
+  {
+    title: 'Regulatory & title integrity',
+    detail: 'RERA compliance, title chain audits, escrow structures, and covenant reviews before shortlisting.',
+  },
+  {
+    title: 'Financial modelling',
+    detail: 'Cash-flow sensitivity testing, rental yield benchmarking, and IRR scenarios tailored to each mandate.',
+  },
+  {
+    title: 'Design & sustainability audits',
+    detail: 'ESG scoring, wellness metrics, and partner workshops covering acoustics, lighting, and retrofits.',
+  },
+];
+
+const mandateAssurances = [
+  { value: '48 hrs', label: 'Deal room activation' },
+  { value: '6 pods', label: 'Specialist teams across legal, design, finance' },
+  { value: '5+ banks', label: 'Priority lending and NBFC alliances' },
 ];
 
 const LandingPage = () => {
@@ -117,6 +255,24 @@ const LandingPage = () => {
             <span>Occupier Solutions</span>
             <span>Research &amp; Insights</span>
           </div>
+          <div className="hero-proof">
+            <span>Referenced by</span>
+            <div className="hero-proof-logos">
+              {heroMentions.map((mention) => (
+                <span key={mention}>{mention}</span>
+              ))}
+            </div>
+          </div>
+          <div className="hero-social">
+            <span>Connect</span>
+            <div className="hero-social-links">
+              {socialIcons.map((social) => (
+                <a key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={social.label}>
+                  <img src={social.icon} alt={`${social.label} icon`} />
+                </a>
+              ))}
+            </div>
+          </div>
         </motion.div>
         <motion.div
           className="hero-showcase"
@@ -141,6 +297,39 @@ const LandingPage = () => {
             ))}
           </div>
         </motion.div>
+      </motion.section>
+
+      <motion.section className="momentum-panel" variants={fadeInUp(0.18)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+        <div className="momentum-intro">
+          <p className="eyebrow">Mandate velocity</p>
+          <h2>Momentum that mirrors institutional deal rooms</h2>
+          <p>
+            Every brief is tracked through a proprietary pipeline ensuring capital market governance across sourcing, diligence,
+            and design delivery.
+          </p>
+        </div>
+        <div className="momentum-grid">
+          <div className="momentum-stats">
+            {momentumHighlights.map((item) => (
+              <article key={item.label} className="momentum-card">
+                <span className="metric">{item.value}</span>
+                <h3>{item.label}</h3>
+                <p>{item.detail}</p>
+              </article>
+            ))}
+          </div>
+          <div className="momentum-timeline">
+            {timelineMilestones.map((milestone) => (
+              <div key={milestone.year} className="timeline-item">
+                <div className="timeline-year">{milestone.year}</div>
+                <div>
+                  <h4>{milestone.title}</h4>
+                  <p>{milestone.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </motion.section>
 
       <motion.section className="brand-promise" variants={fadeInUp(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
@@ -182,6 +371,32 @@ const LandingPage = () => {
         </motion.div>
       </motion.section>
 
+      <motion.section className="market-reach" variants={fadeInUp(0.28)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+        <div className="section-header">
+          <h2>Focused on resilient micro-markets</h2>
+          <p>Coverage spans NCR&rsquo;s most liquid corridors along with experiential escapes within a two-hour flight radius.</p>
+        </div>
+        <div className="market-reach-grid">
+          {microMarkets.map((market) => (
+            <article key={market.name} className="micro-market">
+              <header>
+                <h3>{market.name}</h3>
+                <span>{market.stat}</span>
+              </header>
+              <p>{market.detail}</p>
+            </article>
+          ))}
+        </div>
+        <div className="market-partners">
+          {partnerAlliances.map((partner) => (
+            <div key={partner.label} className="partner-badge">
+              <span>{partner.tag}</span>
+              <strong>{partner.label}</strong>
+            </div>
+          ))}
+        </div>
+      </motion.section>
+
       <motion.section className="identity-banner" variants={fadeInUp(0.34)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
         <div>
           <span className="identity-pill">Legacy</span>
@@ -196,6 +411,33 @@ const LandingPage = () => {
             <li key={item}>{item}</li>
           ))}
         </ul>
+      </motion.section>
+
+      <motion.section className="concierge-network" variants={fadeInUp(0.38)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }}>
+        <div className="concierge-copy">
+          <p className="eyebrow">Concierge ecosystem</p>
+          <h2>Structured teams across advisory, design, and after-sales</h2>
+          <p>
+            Dedicated pods ensure every stakeholder &mdash; from buyers to boutique developers &mdash; receives white-glove execution
+            without diluting the dark red brand aesthetic Vistria is known for.
+          </p>
+          <Link to="/contact" className="btn outline dark">
+            Meet the mandate desk
+          </Link>
+        </div>
+        <div className="concierge-programs">
+          {conciergePrograms.map((program) => (
+            <article key={program.title} className="concierge-card">
+              <h3>{program.title}</h3>
+              <p>{program.summary}</p>
+              <ul>
+                {program.bullets.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
       </motion.section>
 
       <motion.section className="video-reel" variants={fadeInUp(0.42)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
@@ -224,31 +466,52 @@ const LandingPage = () => {
 
       <motion.section className="intro light-surface" variants={fadeInUp(0.5)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
         <motion.div className="intro-card" variants={simpleFade(0.08)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }}>
-          <h2>Invest with conviction</h2>
-          <p>
-            Each opportunity is screened through regulatory, financial, and ESG lenses, while our transaction
-            managers coordinate due diligence, financing, and post-possession enhancements.
-          </p>
+          <div className="intro-card-head">
+            <span className="eyebrow">Mandate control room</span>
+            <h2>Invest with conviction</h2>
+            <p>
+              Each opportunity is screened through regulatory, financial, and ESG lenses, while our transaction
+              managers coordinate due diligence, financing, and post-possession enhancements.
+            </p>
+          </div>
+          <div className="intro-card-grid">
+            <div className="intro-checklist">
+              {dueDiligenceChecks.map((item, index) => (
+                <div key={item.title} className="intro-check">
+                  <span className="intro-check-index">0{index + 1}</span>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.detail}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="intro-assurances">
+              {mandateAssurances.map((assurance) => (
+                <div key={assurance.value} className="intro-assurance">
+                  <span className="assurance-value">{assurance.value}</span>
+                  <p>{assurance.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="intro-pipelines">
+            {investmentSteps.map((step, index) => (
+              <div key={step.title} className="intro-mini-card">
+                <div className="intro-mini-header">
+                  <span className="intro-mini-index">0{index + 1}</span>
+                  <h3 dangerouslySetInnerHTML={{ __html: step.title }} />
+                </div>
+                <p dangerouslySetInnerHTML={{ __html: step.detail }} />
+              </div>
+            ))}
+          </div>
           <div className="intro-cta">
             <Link to="/services" className="btn primary">
               Discover the mandate journey
             </Link>
           </div>
         </motion.div>
-        <div className="intro-highlights">
-          <div className="highlight">
-            <h3>Neighbourhood curation</h3>
-            <p>Focus on growth corridors with proven absorption &mdash; Dwarka Expressway, Golf Course Road, and SPR.</p>
-          </div>
-          <div className="highlight">
-            <h3>Transaction governance</h3>
-            <p>Deal rooms, documentation grids, and milestone reporting patterned on enterprise-grade standards.</p>
-          </div>
-          <div className="highlight">
-            <h3>Experience delivery</h3>
-            <p>Handovers enhanced with design partners, sustainability retrofits, and smart home integrations.</p>
-          </div>
-        </div>
       </motion.section>
 
       <motion.section className="vastu-experience" variants={fadeInUp(0.64)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>

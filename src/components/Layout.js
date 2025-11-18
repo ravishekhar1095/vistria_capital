@@ -12,6 +12,51 @@ const navLinks = [
   { path: '/contact', label: 'Contact us', accent: true },
 ];
 
+const footerNav = [
+  {
+    title: 'Company',
+    links: [
+      { path: '/about', label: 'About us' },
+      { path: '/projects', label: 'Our portfolio' },
+      { path: '/media-news', label: 'Media & news' },
+    ],
+  },
+  {
+    title: 'Expertise',
+    links: [
+      { path: '/services', label: 'Advisory services' },
+      { path: '/insights', label: 'Investment insights' },
+      { path: '/blogs', label: 'Blogs & research' },
+    ],
+  },
+  {
+    title: 'Engage',
+    links: [
+      { path: '/contact', label: 'Contact us' },
+      { path: '/services', label: 'Partner with us' },
+      { path: '/projects', label: 'Case studies' },
+    ],
+  },
+];
+
+const footerSocial = [
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/vistria-capital/',
+    icon: 'https://img.icons8.com/color/48/linkedin.png',
+  },
+  {
+    label: 'Twitter',
+    href: 'https://twitter.com/',
+    icon: 'https://img.icons8.com/color/48/twitter--v1.png',
+  },
+  {
+    label: 'YouTube',
+    href: 'https://www.youtube.com/',
+    icon: 'https://img.icons8.com/color/48/youtube-play.png',
+  },
+];
+
 const Layout = () => {
   const location = useLocation();
 
@@ -22,9 +67,13 @@ const Layout = () => {
   return (
     <div className="vistria-app">
       <header className="top-nav">
-        <div className="brand">
-          <span className="brand-mark">Vistria</span>
-          <span className="brand-name">Capital</span>
+        <div className="brand" aria-label="Vistria Capital">
+          <img
+            className="brand-logo"
+            src="/logo-footer.png"
+            alt="Vistria Capital logo"
+            decoding="async"
+          />
         </div>
         <nav>
           {navLinks.map((item) => (
@@ -51,6 +100,62 @@ const Layout = () => {
       </main>
       <footer className="site-footer">
         <div className="footer-inner">
+          <div className="footer-content">
+            <div className="footer-brand">
+              <div className="brand" aria-label="Vistria Capital">
+                <img
+                  className="brand-logo brand-logo--footer"
+                  src="/logo-footer.png"
+                  alt="Vistria Capital logo"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <p>
+                Blending institutional rigor with entrepreneurial agility to build resilient, future ready
+                ventures across India&apos;s high growth sectors.
+              </p>
+            <div className="footer-social">
+              {footerSocial.map((link) => (
+                <a key={link.label} href={link.href} target="_blank" rel="noreferrer" aria-label={link.label}>
+                  <img src={link.icon} alt={`${link.label} icon`} loading="lazy" />
+                </a>
+              ))}
+            </div>
+            </div>
+            <div className="footer-links">
+              {footerNav.map((section) => (
+                <div key={section.title} className="footer-links-column">
+                  <p className="footer-links-title">{section.title}</p>
+                  <div className="footer-links-list">
+                    {section.links.map((item) => (
+                      <NavLink
+                        key={item.path}
+                        to={item.path}
+                        className={({ isActive }) => ['footer-link', isActive ? 'active' : ''].filter(Boolean).join(' ')}
+                      >
+                        {item.label}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="footer-visit">
+              <h3>Visit Vistria Capital</h3>
+              <p>
+                Nirvana Courtyard, Sector 50<br />
+                Gurugram, Haryana 122018, India
+              </p>
+              <div className="footer-contact">
+                <span>+91 9560700707</span>
+                <span>info@vistriacapital.com</span>
+              </div>
+              <NavLink to="/contact" className="footer-cta">
+                Schedule a consultation
+              </NavLink>
+            </div>
+          </div>
           <div className="footer-map">
             <iframe
               title="Nirvana Courtyard Sector 50 Gurgaon"
@@ -60,17 +165,13 @@ const Layout = () => {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-          <div className="footer-info">
-            <h3>Visit Vistria Capital</h3>
-            <p>
-              Nirvana Courtyard, Sector 50<br />
-              Gurugram, Haryana 122018, India
-            </p>
-            <div className="footer-contact">
-              <span>+91 9560700707</span>
-              <span>info@vistriacapital.com</span>
-            </div>
-            <p className="footer-note">© 2025 Vistria Capital</p>
+        </div>
+        <div className="footer-bottom">
+          <span>© 2025 Vistria Capital. All rights reserved.</span>
+          <div className="footer-bottom-links">
+            <a href="#privacy">Privacy policy</a>
+            <a href="#terms">Terms of use</a>
+            <a href="#ethics">Code of ethics</a>
           </div>
         </div>
       </footer>
