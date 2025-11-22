@@ -4,12 +4,8 @@ import { useEffect } from 'react';
 const navLinks = [
   { path: '/', label: 'Home', end: true },
   { path: '/projects', label: 'Projects' },
-  { path: '/services', label: 'Services' },
-  { path: '/insights', label: 'Insights' },
   { path: '/media-news', label: 'Media & news' },
   { path: '/blogs', label: 'Blogs' },
-  { path: '/about', label: 'About us' },
-  { path: '/contact', label: 'Contact us', accent: true },
 ];
 
 const footerNav = [
@@ -93,6 +89,49 @@ const Layout = () => {
               {item.label}
             </NavLink>
           ))}
+          <div className="nav-dropdown">
+            <button className="nav-dropdown-toggle" type="button">
+              Insights
+            </button>
+            <div className="nav-dropdown-menu">
+              <NavLink to="/insights" end className={({ isActive }) => (isActive ? 'active' : '')}>
+                Overview
+              </NavLink>
+              <NavLink to="/insights/builder-chronology" className={({ isActive }) => (isActive ? 'active' : '')}>
+                Builder chronology
+              </NavLink>
+              <NavLink to="/insights/articles" className={({ isActive }) => (isActive ? 'active' : '')}>
+                Articles
+              </NavLink>
+              <NavLink to="/insights/nri" className={({ isActive }) => (isActive ? 'active' : '')}>
+                NRI
+              </NavLink>
+              <NavLink to="/insights/market-trends" className={({ isActive }) => (isActive ? 'active' : '')}>
+                Market trends
+              </NavLink>
+            </div>
+          </div>
+          <div className="nav-dropdown">
+            <button className="nav-dropdown-toggle" type="button">
+              About
+            </button>
+            <div className="nav-dropdown-menu">
+              <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>
+                About us
+              </NavLink>
+              <NavLink to="/services" className={({ isActive }) => (isActive ? 'active' : '')}>
+                Services
+              </NavLink>
+            </div>
+          </div>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              ['primary-link', isActive ? 'active' : ''].filter(Boolean).join(' ')
+            }
+          >
+            Contact us
+          </NavLink>
         </nav>
       </header>
       <main className="main-content">

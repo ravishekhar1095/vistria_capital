@@ -3,51 +3,11 @@ const heroStats = [
   { value: '24h', label: 'Mandate SLA' },
   { value: '8 cities', label: 'Concierge coverage' },
 ];
-
-const contactChannels = [
-  {
-    title: 'WhatsApp desk',
-    value: '+91 9560700707',
-    icon: 'https://img.icons8.com/color/48/whatsapp--v1.png',
-    link: 'https://wa.me/919560700707',
-  },
-  {
-    title: 'Email partners',
-    value: 'info@vistriacapital.com',
-    icon: 'https://img.icons8.com/color/48/apple-mail.png',
-    link: 'mailto:info@vistriacapital.com',
-  },
-  {
-    title: 'Private call',
-    value: '+91 124 123 4567',
-    icon: 'https://img.icons8.com/color/48/apple-phone.png',
-    link: 'tel:+911241234567',
-  },
-];
-
-const contactPillars = [
-  {
-    title: 'Mandate concierge',
-    detail: 'Private walkthroughs, NDAs, and shortlist briefings curated by senior partners.',
-    icon: 'https://img.icons8.com/ios-filled/100/ffffff/conference-call.png',
-  },
-  {
-    title: 'Documentation desk',
-    detail: 'Sanction letters, term sheets, and legal diligence orchestrated end-to-end.',
-    icon: 'https://img.icons8.com/ios-filled/100/ffffff/documents.png',
-  },
-  {
-    title: 'After-sales studio',
-    detail: 'Designers, sustainability advisors, and automation specialists on standby.',
-    icon: 'https://img.icons8.com/ios-filled/100/ffffff/light.png',
-  },
-];
-
 const conciergePerks = [
-  'Exclusive WhatsApp briefings for UHNI desks',
-  'Private walkthroughs with developer CXOs',
-  'Banking liaison for sanction letters & locker opening',
-  'Post-possession design partners & wellness consultants',
+  'Personalized site visits',
+  'Dedicated WhatsApp desk',
+  'White-glove transaction coordination',
+  'Direct access to senior advisors',
 ];
 
 const socialLinks = [
@@ -56,25 +16,18 @@ const socialLinks = [
   { label: 'YouTube', href: 'https://www.youtube.com/', icon: 'https://img.icons8.com/color/48/youtube-play.png' },
 ];
 
-const contactShowcase = {
-  image: 'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=80',
-  title: 'Command center in Gurugram',
-  copy: 'Walk into our Golf Course Road base for immersive previews, data rooms, and virtual walkthroughs that mirror institutional deal rooms.',
-  bullets: ['360° floor plan tours', 'Immersive VR previews', 'Onsite analyst support'],
-};
-
 const ContactPage = () => (
   <>
-    <section className="page-hero soft-bg contact-hero">
+    <section className="page-hero contact-hero">
       <p className="page-kicker">Private Client Desk</p>
       <h1>Plan your next acquisition with Vistria Capital</h1>
       <p className="page-subtitle">
-        Partner with our senior advisors for capital allocation, site visits, and transaction closure in record time. Share your objectives
+        Partner with senior advisors for capital allocation, site visits, and transaction closure in record time. Share your objectives
         and we will secure a discreet consultation window.
       </p>
-      <div className="hero-stats">
+      <div className="contact-hero-stats">
         {heroStats.map((stat) => (
-          <div key={stat.label}>
+          <div key={stat.label} className="contact-stat">
             <strong>{stat.value}</strong>
             <span>{stat.label}</span>
           </div>
@@ -82,53 +35,8 @@ const ContactPage = () => (
       </div>
     </section>
 
-    <section className="contact-panels page-section">
-      <div className="contact-panel contact-channel-panel">
-        <h3>Connect instantly</h3>
-        <div className="contact-channel-list">
-          {contactChannels.map((channel) => (
-            <a key={channel.title} href={channel.link} target="_blank" rel="noreferrer">
-              <img src={channel.icon} alt={`${channel.title} icon`} loading="lazy" />
-              <div>
-                <span>{channel.title}</span>
-                <strong>{channel.value}</strong>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-      <div className="contact-panel contact-showcase">
-        <div className="contact-showcase__media">
-          <img src={contactShowcase.image} alt="Vistria Capital command center" loading="lazy" />
-        </div>
-        <div className="contact-showcase__content">
-          <h3>{contactShowcase.title}</h3>
-          <p>{contactShowcase.copy}</p>
-          <ul>
-            {contactShowcase.bullets.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section className="contact-pillars page-section">
-      {contactPillars.map((pillar) => (
-        <article key={pillar.title} className="contact-pillar-card">
-          <div className="contact-pillar-icon">
-            <img src={pillar.icon} alt={`${pillar.title} icon`} loading="lazy" />
-          </div>
-          <div>
-            <h3>{pillar.title}</h3>
-            <p>{pillar.detail}</p>
-          </div>
-        </article>
-      ))}
-    </section>
-
-    <section className="contact">
-      <div className="contact-card">
+    <section className="contact contact-shell contact-grid">
+      <div className="contact-card contact-card--highlight">
         <h2>Schedule a consultation</h2>
         <p>
           Tell us about your investment thesis, ticket size, and preferred micro-markets so our desk can tailor the right opportunities.
@@ -171,25 +79,22 @@ const ContactPage = () => (
           </button>
         </form>
       </div>
-      <div className="contact-details">
-        <div>
-          <h3>Visit us</h3>
-          <p>
-            Vistria Capital
-            <br />
-            Two Horizon Center, Golf Course Road, Gurugram
-          </p>
+      <div className="contact-card contact-card--highlight">
+        <div className="contact-detail-block">
+          <p className="eyebrow">Visit us</p>
+          <h3>Nirvana Courtyard, Sector 50</h3>
+          <p>Gurugram, Haryana 122018, India</p>
         </div>
-        <div>
-          <h3>Concierge perks</h3>
+        <div className="contact-detail-block">
+          <p className="eyebrow">Concierge perks</p>
           <ul className="concierge-list">
             {conciergePerks.map((perk) => (
               <li key={perk}>{perk}</li>
             ))}
           </ul>
         </div>
-        <div>
-          <h3>Talk directly</h3>
+        <div className="contact-detail-block">
+          <p className="eyebrow">Talk directly</p>
           <div className="contact-actions">
             <a href="https://wa.me/919560700707" target="_blank" rel="noreferrer">
               <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp icon" />
@@ -214,8 +119,8 @@ const ContactPage = () => (
             </a>
           </div>
         </div>
-        <div className="contact-social">
-          <h3>Follow insights</h3>
+        <div className="contact-detail-block">
+          <p className="eyebrow">Follow insights</p>
           <div className="contact-social-icons">
             {socialLinks.map((link) => (
               <a key={link.label} href={link.href} target="_blank" rel="noreferrer" aria-label={link.label}>

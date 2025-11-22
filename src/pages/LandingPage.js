@@ -249,7 +249,7 @@ const LandingPage = () => {
   ];
 
   return (
-    <>
+    <div className="landing-flow">
       <motion.section
         className="hero refined-hero"
         variants={fadeInUp(0, 0.45)}
@@ -262,7 +262,7 @@ const LandingPage = () => {
           <h1>Modern luxury real estate advisory crafted for Delhi NCR&rsquo;s most discerning investors</h1>
           <p className="hero-subtitle">
             Vistria Capital combines institutional-grade research, capital markets intelligence, and concierge
-            execution to deliver landmark residences across Gurugram&rsquo;s most resilient neighbourhoods.
+            execution to deliver landmark residences across Gurugaon&rsquo;s most resilient neighbourhoods.
           </p>
           <div className="hero-actions">
             <Link to="/projects" className="btn primary">
@@ -324,8 +324,7 @@ const LandingPage = () => {
       <motion.section className="logo-carousel" variants={fadeInUp(0.16)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
         <div className="logo-carousel__copy">
           <p className="eyebrow">Ecosystem allies</p>
-          <h2>Builders insights</h2>
-          <p>Signals credibility for mandates while keeping Vistria distinct from the US-based The Vistria Group, LP.</p>
+          <h2>Builder Chronology</h2>
         </div>
         <div className="logo-carousel__rail">
           <div className="logo-carousel__track">
@@ -605,7 +604,7 @@ const LandingPage = () => {
           ))}
         </motion.div>
       </motion.section>
-    </>
+    </div>
   );
 };
 

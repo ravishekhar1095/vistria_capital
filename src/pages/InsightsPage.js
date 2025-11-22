@@ -52,10 +52,10 @@ const InsightsPage = () => {
       <section className="page-hero">
         <p className="page-kicker">Insights &amp; Research</p>
         <h1>Intelligence that powers every acquisition mandate</h1>
-        <p className="page-subtitle">
-          We translate on-ground absorption metrics, policy signals, and developer pulse into actionable dashboards for Vistria clients.
-        </p>
-      </section>
+      <p className="page-subtitle">
+        We translate on-ground absorption metrics, policy signals, and developer pulse into actionable dashboards for Vistria clients.
+      </p>
+    </section>
 
       <section className="insights page-section">
         {insights.map((insight) => (
