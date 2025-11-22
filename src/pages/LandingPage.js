@@ -206,6 +206,28 @@ const mandateAssurances = [
   { value: '5+ banks', label: 'Priority lending and NBFC alliances' },
 ];
 
+const logoCarousel = [
+  {
+    name: 'Knight Frank',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Knight_Frank_logo.svg/320px-Knight_Frank_logo.svg.png',
+  },
+  { name: 'CBRE', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/CBRE_Group_logo.svg/320px-CBRE_Group_logo.svg.png' },
+  { name: 'JLL', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/JLL_Logo.svg/320px-JLL_Logo.svg.png' },
+  {
+    name: 'Cushman & Wakefield',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Cushman_%26_Wakefield_logo.svg/320px-Cushman_%26_Wakefield_logo.svg.png',
+  },
+  {
+    name: 'Colliers',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Colliers_International_logo.svg/320px-Colliers_International_logo.svg.png',
+  },
+  { name: 'Savills', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Savills_logo.svg/320px-Savills_logo.svg.png' },
+  {
+    name: "Sotheby's International Realty",
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Sotheby%27s_International_Realty_logo.svg/320px-Sotheby%27s_International_Realty_logo.svg.png',
+  },
+];
+
 const LandingPage = () => {
   const quickStats = [
     {
@@ -297,6 +319,24 @@ const LandingPage = () => {
             ))}
           </div>
         </motion.div>
+      </motion.section>
+
+      <motion.section className="logo-carousel" variants={fadeInUp(0.16)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+        <div className="logo-carousel__copy">
+          <p className="eyebrow">Ecosystem allies</p>
+          <h2>Builders insights</h2>
+          <p>Signals credibility for mandates while keeping Vistria distinct from the US-based The Vistria Group, LP.</p>
+        </div>
+        <div className="logo-carousel__rail">
+          <div className="logo-carousel__track">
+            {[...logoCarousel, ...logoCarousel].map((logo, index) => (
+              <div className="logo-chip" key={`${logo.name}-${index}`}>
+                <img src={logo.src} alt={`${logo.name} logo`} loading="lazy" />
+                <span>{logo.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </motion.section>
 
       <motion.section className="momentum-panel" variants={fadeInUp(0.18)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>

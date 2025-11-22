@@ -165,6 +165,7 @@ a {
 .identity-banner,
 .momentum-panel,
 .pillars,
+.logo-carousel,
 .intro,
 .vastu-experience,
 .video-reel,
@@ -1127,6 +1128,103 @@ a {
   height: 20px;
 }
 
+.logo-carousel {
+  background: linear-gradient(135deg, #0f172a, #111827);
+  color: #e2e8f0;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.4rem, 4vw, 2.4rem);
+  align-items: center;
+  overflow: hidden;
+}
+
+.logo-carousel__copy h2 {
+  margin: 0.35rem 0;
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+}
+
+.logo-carousel__copy p {
+  margin: 0;
+  color: rgba(226, 232, 240, 0.78);
+}
+
+.logo-carousel__rail {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 120px;
+}
+
+.logo-carousel__rail::before,
+.logo-carousel__rail::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.logo-carousel__rail::before {
+  left: 0;
+  background: linear-gradient(90deg, #0f172a, transparent);
+}
+
+.logo-carousel__rail::after {
+  right: 0;
+  background: linear-gradient(270deg, #0f172a, transparent);
+}
+
+.logo-carousel__track {
+  display: inline-flex;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
+  padding: 1.4rem 1.2rem;
+  width: max-content;
+  white-space: nowrap;
+  animation: logoDrift 26s linear infinite;
+}
+
+.logo-carousel__track:hover {
+  animation-play-state: paused;
+}
+
+.logo-chip {
+  min-width: 160px;
+  padding: 1rem 1.4rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.logo-chip img {
+  height: 44px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  filter: grayscale(0.08);
+}
+
+@keyframes logoDrift {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 section {
   padding: clamp(3rem, 10vw, 5.5rem) clamp(1.5rem, 8vw, 5rem);
 }
@@ -1885,12 +1983,13 @@ section {
 
 .projects-hero {
   background:
-    linear-gradient(135deg, rgba(29, 32, 49, 0.94), rgba(84, 28, 46, 0.9)),
-    radial-gradient(circle at 75% 10%, rgba(255, 255, 255, 0.25), transparent 60%),
+    linear-gradient(135deg, rgba(17, 24, 39, 0.88), rgba(148, 36, 68, 0.72)),
+    radial-gradient(circle at 65% 20%, rgba(255, 255, 255, 0.18), transparent 55%),
+    radial-gradient(circle at 15% 85%, rgba(239, 35, 60, 0.15), transparent 45%),
     url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1600&q=80');
   background-size: cover;
   background-position: center;
-  color: rgba(250, 251, 253, 0.95);
+  color: #ffffff;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: clamp(2rem, 4vw, 3.5rem);
@@ -1908,7 +2007,13 @@ section {
 }
 
 .projects-hero__copy .page-subtitle {
-  color: rgba(248, 250, 252, 0.78);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.projects-hero .page-pills span {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .projects-filters {
@@ -3406,6 +3511,10 @@ textarea:focus {
   .footer-inner {
     gap: 1.5rem;
   }
+
+  .logo-carousel {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -3423,6 +3532,20 @@ textarea:focus {
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .logo-carousel {
+    gap: 1.2rem;
+    text-align: left;
+  }
+
+  .logo-carousel__track {
+    padding: 1rem;
+    gap: 1.4rem;
+  }
+
+  .logo-chip {
+    min-width: 140px;
   }
 
   .hero-stats {
