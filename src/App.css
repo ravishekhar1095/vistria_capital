@@ -2926,6 +2926,102 @@ section {
   box-shadow: 0 26px 58px rgba(15, 23, 42, 0.12);
 }
 
+.playbook-switcher {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.92), rgba(62, 8, 16, 0.88));
+  color: #fff;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.playbook-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.playbook-tabs button {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.playbook-tabs button.active {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+.playbook-panel {
+  margin-top: 1.4rem;
+  padding: 1.6rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(15, 23, 42, 0.1));
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr);
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.playbook-panel h3 {
+  margin: 0.25rem 0 0.4rem 0;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.playbook-panel p {
+  margin: 0 0 0.8rem 0;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.playbook-proof {
+  display: inline-flex;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-weight: 600;
+}
+
+.playbook-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.8rem;
+}
+
+.mini-stat {
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mini-stat .label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mini-stat strong {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
 .timeline-section {
   padding: clamp(3rem, 9vw, 5.5rem) clamp(1.5rem, 8vw, 5rem);
 }
@@ -3513,6 +3609,10 @@ textarea:focus {
   }
 
   .logo-carousel {
+    grid-template-columns: 1fr;
+  }
+
+  .playbook-panel {
     grid-template-columns: 1fr;
   }
 }
