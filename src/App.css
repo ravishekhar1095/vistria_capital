@@ -860,8 +860,8 @@ a {
   padding: clamp(3.5rem, 9vw, 6.8rem) clamp(1.5rem, 8vw, 5.5rem);
   background:
     linear-gradient(120deg, rgba(14, 23, 42, 0.94), rgba(17, 24, 39, 0.88)),
-    linear-gradient(240deg, rgba(239, 35, 60, 0.45), transparent 65%),
-    url('https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1600&q=80');
+    linear-gradient(240deg, rgba(239, 35, 60, 0.35), transparent 65%),
+    url('./assets/investigate.jpeg');
   background-size: cover;
   background-position: center;
   color: #f8fafc;
