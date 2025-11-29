@@ -1271,8 +1271,8 @@ a {
 }
 
 .logo-chip {
-  min-width: 160px;
-  padding: 1rem 1.4rem;
+  min-width: 140px;
+  padding: 1rem 1.2rem;
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
@@ -1282,6 +1282,8 @@ a {
   gap: 0.6rem;
   color: #0f172a;
   font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: none;
 }
 
 .logo-chip img {
@@ -3217,6 +3219,27 @@ section {
   font-size: 0.9rem;
   font-weight: 600;
   color: #ef233c;
+}
+
+.timeline-builder {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.timeline-logo {
+  width: 58px;
+  height: 32px;
+  object-fit: contain;
+  filter: grayscale(0.1) contrast(1.05);
+}
+
+.timeline-builder-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .timeline-card:hover {

@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
 import { newsItems } from '../data/news';
-import { motion } from 'framer-motion';
-import { fadeInUp, simpleFade } from '../utils/motion';
 
 const heroMentions = ['Knight Frank India', 'ANAROCK Research', 'CREDAI NCR'];
 
@@ -209,22 +207,22 @@ const mandateAssurances = [
 const logoCarousel = [
   {
     name: 'Knight Frank',
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Knight_Frank_logo.svg/320px-Knight_Frank_logo.svg.png',
+    src: '/logos/knight-frank.png',
   },
-  { name: 'CBRE', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/CBRE_Group_logo.svg/320px-CBRE_Group_logo.svg.png' },
-  { name: 'JLL', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/JLL_Logo.svg/320px-JLL_Logo.svg.png' },
+  { name: 'CBRE', src: '/logos/cbre.png' },
+  { name: 'JLL', src: '/logos/jll.png' },
   {
     name: 'Cushman & Wakefield',
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Cushman_%26_Wakefield_logo.svg/320px-Cushman_%26_Wakefield_logo.svg.png',
+    src: '/logos/cushman.png',
   },
   {
     name: 'Colliers',
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Colliers_International_logo.svg/320px-Colliers_International_logo.svg.png',
+    src: '/logos/colliers.png',
   },
-  { name: 'Savills', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Savills_logo.svg/320px-Savills_logo.svg.png' },
+  { name: 'Savills', src: '/logos/savills.png' },
   {
     name: "Sotheby's International Realty",
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Sotheby%27s_International_Realty_logo.svg/320px-Sotheby%27s_International_Realty_logo.svg.png',
+    src: '/logos/sothebys.png',
   },
 ];
 
@@ -250,14 +248,8 @@ const LandingPage = () => {
 
   return (
     <div className="landing-flow">
-      <motion.section
-        className="hero refined-hero"
-        variants={fadeInUp(0, 0.45)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.5 }}
-      >
-        <motion.div className="hero-content" variants={simpleFade(0.05)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.6 }}>
+      <section className="hero refined-hero">
+        <div className="hero-content">
           <div className="hero-eyebrow">Institutional-grade advisory model</div>
           <h1>Modern luxury real estate advisory crafted for Delhi NCR&rsquo;s most discerning investors</h1>
           <p className="hero-subtitle">
@@ -295,14 +287,8 @@ const LandingPage = () => {
               ))}
             </div>
           </div>
-        </motion.div>
-        <motion.div
-          className="hero-showcase"
-          variants={simpleFade(0.12)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.5 }}
-        >
+        </div>
+        <div className="hero-showcase">
           <div className="hero-card">
             <h3>Curated inventory</h3>
             <p>
@@ -318,10 +304,10 @@ const LandingPage = () => {
               </div>
             ))}
           </div>
-        </motion.div>
-      </motion.section>
+        </div>
+      </section>
 
-      <motion.section className="logo-carousel" variants={fadeInUp(0.16)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+      <section className="logo-carousel">
         <div className="logo-carousel__copy">
           <p className="eyebrow">Ecosystem allies</p>
           <h2>Builder Chronology</h2>
@@ -336,9 +322,9 @@ const LandingPage = () => {
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section className="momentum-panel" variants={fadeInUp(0.18)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+      <section className="momentum-panel">
         <div className="momentum-intro">
           <p className="eyebrow">Mandate velocity</p>
           <h2>Momentum that mirrors institutional deal rooms</h2>
@@ -369,9 +355,9 @@ const LandingPage = () => {
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section className="brand-promise" variants={fadeInUp(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+      <section className="brand-promise">
         <div className="brand-promise__lead">
           <h2>See a brighter way with Vistria Capital</h2>
           <p>
@@ -379,17 +365,17 @@ const LandingPage = () => {
             and sustainability outcomes for long-term wealth stewardship grounded in Gurgaon&rsquo;s most trusted brokerage legacy.
           </p>
         </div>
-        <motion.div className="brand-promise__grid" variants={simpleFade(0.15)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+        <div className="brand-promise__grid">
           {differentiators.map((item) => (
             <div key={item.label} className="brand-card">
               <h3>{item.label}</h3>
               <p>{item.copy}</p>
             </div>
           ))}
-        </motion.div>
-      </motion.section>
+        </div>
+      </section>
 
-      <motion.section className="pillars" variants={fadeInUp(0.24)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+      <section className="pillars">
         <div className="section-header">
           <h2>Integrated advisory pillars</h2>
           <p>
@@ -397,7 +383,7 @@ const LandingPage = () => {
             clients active in Delhi NCR.
           </p>
         </div>
-        <motion.div className="pillars-grid" variants={simpleFade(0.18)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+        <div className="pillars-grid">
           {advisoryPillars.map((pillar) => (
             <article key={pillar.title} className="pillar-card">
               <h3>{pillar.title}</h3>
@@ -407,10 +393,10 @@ const LandingPage = () => {
               </Link>
             </article>
           ))}
-        </motion.div>
-      </motion.section>
+        </div>
+      </section>
 
-      <motion.section className="market-reach" variants={fadeInUp(0.28)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+      <section className="market-reach">
         <div className="section-header">
           <h2>Focused on resilient micro-markets</h2>
           <p>Coverage spans NCR&rsquo;s most liquid corridors along with experiential escapes within a two-hour flight radius.</p>
@@ -434,9 +420,9 @@ const LandingPage = () => {
             </div>
           ))}
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section className="identity-banner" variants={fadeInUp(0.34)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+      <section className="identity-banner">
         <div>
           <span className="identity-pill">Legacy</span>
           <h2>Vistria Capital (formerly Andlay Estates)</h2>
@@ -450,9 +436,9 @@ const LandingPage = () => {
             <li key={item}>{item}</li>
           ))}
         </ul>
-      </motion.section>
+      </section>
 
-      <motion.section className="concierge-network" variants={fadeInUp(0.38)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }}>
+      <section className="concierge-network">
         <div className="concierge-copy">
           <p className="eyebrow">Concierge ecosystem</p>
           <h2>Structured teams across advisory, design, and after-sales</h2>
@@ -477,9 +463,9 @@ const LandingPage = () => {
             </article>
           ))}
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section className="video-reel" variants={fadeInUp(0.42)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+      <section className="video-reel">
         <div className="section-header">
           <h2>Short-form insights &amp; walkthroughs</h2>
           <p>Reels designed for Instagram-ready storytelling across Gurugram luxury assets and leisure escapes.</p>
@@ -501,10 +487,10 @@ const LandingPage = () => {
             </article>
           ))}
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section className="intro light-surface" variants={fadeInUp(0.5)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
-        <motion.div className="intro-card" variants={simpleFade(0.08)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }}>
+      <section className="intro light-surface">
+        <div className="intro-card">
           <div className="intro-card-head">
             <span className="eyebrow">Mandate control room</span>
             <h2>Invest with conviction</h2>
@@ -550,11 +536,11 @@ const LandingPage = () => {
               Discover the mandate journey
             </Link>
           </div>
-        </motion.div>
-      </motion.section>
+        </div>
+      </section>
 
-      <motion.section className="vastu-experience" variants={fadeInUp(0.64)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
-        <motion.div className="vastu-media" variants={simpleFade(0.1)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
+      <section className="vastu-experience">
+        <div className="vastu-media">
           <iframe
             src="https://www.youtube.com/embed/zPSwZAQnbIY"
             title="Vastu aligned luxury living"
@@ -562,8 +548,8 @@ const LandingPage = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
-        </motion.div>
-        <motion.div className="vastu-copy" variants={simpleFade(0.12)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }}>
+        </div>
+        <div className="vastu-copy">
           <h2>Vastu-aligned living for elevated wellbeing</h2>
           <p>
             Drawing on insights from Vastu consultants collaborating with our design advisory teams, Vistria
@@ -581,15 +567,15 @@ const LandingPage = () => {
               Request a Vastu consultation →
             </Link>
           </div>
-        </motion.div>
-      </motion.section>
+        </div>
+      </section>
 
-      <motion.section className="news-section" variants={fadeInUp(0.74)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+      <section className="news-section">
         <div className="section-header">
           <h2>Live market intel &mdash; Delhi NCR</h2>
           <p>Curated updates from primary releases across Knight Frank, ANAROCK, and policy briefings.</p>
         </div>
-        <motion.div className="news-grid" variants={simpleFade(0.1)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+        <div className="news-grid">
           {newsItems.map((item) => (
             <article key={item.title} className="news-card">
               <header>
@@ -602,8 +588,8 @@ const LandingPage = () => {
               </a>
             </article>
           ))}
-        </motion.div>
-      </motion.section>
+        </div>
+      </section>
     </div>
   );
 };

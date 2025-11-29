@@ -161,7 +161,7 @@ const MediaNewsPage = () => {
         </div>
       </section>
 
-      <section className="media-feature-grid page-section">
+      <section className="media-feature-grid page-section" id="press-awards">
         {mediaHighlights.map((item) => (
           <article key={item.title} className="media-card">
             <span className="media-type">{item.type}</span>
@@ -196,7 +196,7 @@ const MediaNewsPage = () => {
         </div>
       </section>
 
-      <section className="live-stream page-section">
+      <section className="live-stream page-section" id="live-desk">
         <div className="section-header">
           <h2>Live NCR buzz</h2>
           <p>Powered by Newsdata.io once your API key is provided. Replace env var to go live.</p>

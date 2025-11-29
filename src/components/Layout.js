@@ -4,8 +4,13 @@ import { useEffect } from 'react';
 const navLinks = [
   { path: '/', label: 'Home', end: true },
   { path: '/projects', label: 'Projects' },
-  { path: '/media-news', label: 'Media & news' },
   { path: '/blogs', label: 'Blogs' },
+];
+
+const mediaNavLinks = [
+  { path: '/media-news', label: 'Media hub', end: true },
+  { path: '/media-news#press-awards', label: 'Press & awards' },
+  { path: '/media-news#live-desk', label: 'Live desk' },
 ];
 
 const footerNav = [
@@ -109,6 +114,23 @@ const Layout = () => {
               <NavLink to="/insights/market-trends" className={({ isActive }) => (isActive ? 'active' : '')}>
                 Market trends
               </NavLink>
+            </div>
+          </div>
+          <div className="nav-dropdown">
+            <button className="nav-dropdown-toggle" type="button">
+              Media & news
+            </button>
+            <div className="nav-dropdown-menu">
+              {mediaNavLinks.map((item) => (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  end={item.end}
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                >
+                  {item.label}
+                </NavLink>
+              ))}
             </div>
           </div>
           <div className="nav-dropdown">
