@@ -12,6 +12,7 @@ import MarketTrendsPage from './pages/MarketTrendsPage';
 import ContactPage from './pages/ContactPage';
 import MediaNewsPage from './pages/MediaNewsPage';
 import BlogsPage from './pages/BlogsPage';
+import BlogDetailPage from './pages/BlogDetailPage';
 import AboutPage from './pages/AboutPage';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="insights/market-trends" element={<MarketTrendsPage />} />
           <Route path="media-news" element={<MediaNewsPage />} />
           <Route path="blogs" element={<BlogsPage />} />
+          <Route path="blogs/:slug" element={<BlogDetailPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />
         </Route>

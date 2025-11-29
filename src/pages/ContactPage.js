@@ -59,6 +59,8 @@ const ContactPage = () => (
                 <option value="" disabled>
                   Select range
                 </option>
+                <option>₹1 Cr - 2 Cr</option>
+                <option>₹2 - 3 Cr</option>
                 <option>₹3 - 5 Cr</option>
                 <option>₹5 - 8 Cr</option>
                 <option>₹8 - 12 Cr</option>

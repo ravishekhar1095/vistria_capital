@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import { newsItems } from '../data/news';
-
-const heroMentions = ['Knight Frank India', 'ANAROCK Research', 'CREDAI NCR'];
-
+const heroMentions = ['Economic Times', 'Business Standard', 'Moneycontrol', 'Zee Business'];
 const socialIcons = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/vistria-capital/', icon: 'https://img.icons8.com/color/48/linkedin.png' },
   { label: 'Twitter', href: 'https://twitter.com/', icon: 'https://img.icons8.com/color/48/twitter--v1.png' },
@@ -52,7 +50,6 @@ const differentiators = [
 
 const identityHighlights = [
   'Formerly Andlay Estates with legacy relationships across NCR developers.',
-  'Independent Indian brokerage, not affiliated with the US-based The Vistria Group, LP.',
   'Expanding beyond Gurugram into Noida and leisure destinations such as Nainital.',
   'Progressive, data-led channel partner delivering luxury acquisitions since 2005.',
 ];
@@ -101,23 +98,27 @@ const timelineMilestones = [
 const microMarkets = [
   {
     name: 'Golf Course Road / Ext.',
-    stat: '91% luxury absorption',
     detail: 'Consistent premium pricing powered by branded residences and global schools.',
   },
   {
     name: 'Dwarka Expressway',
-    stat: '24% QoQ price appreciation',
-    detail: 'Infra-ready corridors attracting NRIs for ready-to-move 4 & 5 BHK assets.',
+    detail: 'Infra-ready corridors attracting NRIs for ready-to-move 2 ,3, 4 & 5 BHK assets.',
   },
   {
     name: 'Southern Peripheral Road',
-    stat: '12M sq.ft. under planning',
     detail: 'Mixed-use masterplans and SCO launches elevating end-user demand.',
   },
   {
     name: 'Noida & Leisure belts',
-    stat: '2 hr connect radius',
     detail: 'Managed second homes in Nainital, Bhowali, and coastal Goa communities.',
+  },
+  {
+    name: 'Central Delhi Redevelopments',
+    detail: 'Heritage mansions near Chanakyapuri and Aurangzeb Road reimagined with embassy-grade services.',
+  },
+  {
+    name: 'Leisure Ridge / Kumaon',
+    detail: 'Managed chalets and spa villas across Bhowali, Mukteshwar, and Nainital ridgelines.',
   },
 ];
 
@@ -146,21 +147,45 @@ const conciergePrograms = [
   },
 ];
 
-const videoReels = [
+const nriHighlights = [
   {
-    title: 'What Makes BPTP Verti Greens Sector 102 so SPECIAL?',
-    summary: 'BPTP Amstoria Verti Greens — discover the vertical luxury features curated for Sector 102.',
-    src: 'https://www.youtube.com/embed/G4yRkoNT5nU',
+    title: 'Portfolio preferences',
+    detail:
+      '₹4–12 Cr tickets across Dwarka Expressway, Golf Course Extension, and leisure corridors with institutional-grade RWAs and managed rentals.',
   },
   {
-    title: 'Gurugram luxury micro-markets',
-    summary: 'Experion NOVA at Windchants – 4 BHK luxury apartments in Gurgaon.',
-    src: 'https://www.youtube.com/embed/koX8msEWBTI',
+    title: 'Regulatory & repatriation',
+    detail: 'Dedicated compliance pods handle FEMA guardrails, LRS, and escrow structures mapped to GCC, UK, and North America investors.',
   },
   {
-    title: 'Bhowali Valley Chalets preview',
-    summary: 'TARC Ishva: Luxury living inspired by the golden ratio in Sector 63A, Gurgaon.',
-    src: 'https://www.youtube.com/embed/EfnnBRxR3h4',
+    title: 'Virtual-to-physical tours',
+    detail:
+      'Synchronized walkthroughs, absorption dashboards, and Vastu-ready layout tweaks before you fly in for notarization or SPA execution.',
+  },
+  {
+    title: 'After-sales governance',
+    detail: 'Post-possession snag closure, fit-out supervision, and leasing mandates anchored to predefined outcome matrices.',
+  },
+];
+
+const nriStats = [
+  { value: '₹2.1 Cr', label: 'Avg. remittance per tranche', note: 'Via GCC & UK mandates FY24' },
+  { value: '11 time zones', label: 'Concierge coverage', note: 'Round-the-clock WhatsApp desk' },
+  { value: '72 hrs', label: 'Data room activation', note: 'Valuation + legal packets' },
+];
+
+const nriPlaybook = [
+  {
+    title: 'Currency advantage tracker',
+    summary: 'FX-linked dashboards benchmark USD/GBP/AED inflows against launch calendars and payment-plan incentives.',
+  },
+  {
+    title: 'Priority lending stack',
+    summary: 'Tie-ups with 5+ NBFCs for fast sanction memos, e-sign workflows, and rate locks for diaspora borrowers.',
+  },
+  {
+    title: 'Heritage + leisure blends',
+    summary: 'Second-home clusters in Kumaon, Goa, and Delhi Lutyens zone curated for hybrid personal use and managed rentals.',
   },
 ];
 
@@ -229,20 +254,21 @@ const logoCarousel = [
 const LandingPage = () => {
   const quickStats = [
     {
-      figure: '₹8.7 Cr+',
+      figure: '₹100 Cr+',
       caption: 'Ultra luxury inventory under mandate',
     },
     {
-      figure: '73%',
+      figure: '99%',
       caption: 'Client mandates sourced via institutional referrals',
     },
     {
       figure: '4 micro-markets',
-      caption: 'Priority focus across Dwarka Expressway & Golf Course belts',
+      caption: 'Priority focus across Dwarka Expressway & Golf Course belts,Golf Course Extension Road, Southern Peripheral Road, and Noida',
+
     },
     {
       figure: '175 units',
-      caption: 'FY22 sales target achieved across premium + luxury launches',
+      caption: 'FY24 and FY25 sales target achieved across premium + luxury launches',
     },
   ];
 
@@ -406,7 +432,6 @@ const LandingPage = () => {
             <article key={market.name} className="micro-market">
               <header>
                 <h3>{market.name}</h3>
-                <span>{market.stat}</span>
               </header>
               <p>{market.detail}</p>
             </article>
@@ -465,30 +490,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="video-reel">
-        <div className="section-header">
-          <h2>Short-form insights &amp; walkthroughs</h2>
-          <p>Reels designed for Instagram-ready storytelling across Gurugram luxury assets and leisure escapes.</p>
-        </div>
-        <div className="reel-grid">
-          {videoReels.map((reel) => (
-            <article key={reel.title} className="reel-card">
-              <div className="reel-frame">
-                <iframe
-                  src={reel.src}
-                  title={reel.title}
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-              <h3>{reel.title}</h3>
-              <p>{reel.summary}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="intro light-surface">
         <div className="intro-card">
           <div className="intro-card-head">
@@ -539,34 +540,44 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="vastu-experience">
-        <div className="vastu-media">
-          <iframe
-            src="https://www.youtube.com/embed/zPSwZAQnbIY"
-            title="Vastu aligned luxury living"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+      <section className="nri-spotlight page-section">
+        <div className="section-header">
+          <p className="eyebrow">Global Indian desk</p>
+          <h2>NRI mandate spotlight</h2>
+          <p>Programs engineered for diaspora capital that demands timezone-aware support, watertight compliance, and concierge-grade delivery.</p>
         </div>
-        <div className="vastu-copy">
-          <h2>Vastu-aligned living for elevated wellbeing</h2>
-          <p>
-            Drawing on insights from Vastu consultants collaborating with our design advisory teams, Vistria
-            Capital curates residences that harmonise energy flow with luxury aesthetics. From orienting master
-            suites to integrating meditation decks, we ensure your next address nurtures balance, prosperity, and calm.
-          </p>
-          <ul>
-            <li>North-east wellness cores with diffused daylight and biophilic materials.</li>
-            <li>Kitchen and service zoning positioned along south-east quadrants for elemental alignment.</li>
-            <li>Customisable pooja and meditation suites enhanced with acoustic and lighting design.</li>
-            <li>On-demand Vastu audits during layout customization and fit-out stages.</li>
-          </ul>
-          <div>
-            <Link to="/contact" className="text-link">
-              Request a Vastu consultation →
-            </Link>
-          </div>
+        <div className="nri-stats-row">
+          {nriStats.map((stat) => (
+            <div key={stat.label} className="nri-stat">
+              <strong>{stat.value}</strong>
+              <span>{stat.label}</span>
+              <p>{stat.note}</p>
+            </div>
+          ))}
+        </div>
+        <div className="nri-grid">
+          {nriHighlights.map((item) => (
+            <article key={item.title} className="nri-card">
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+            </article>
+          ))}
+        </div>
+        <div className="nri-playbook">
+          {nriPlaybook.map((item) => (
+            <article key={item.title} className="nri-playbook-card">
+              <h4>{item.title}</h4>
+              <p>{item.summary}</p>
+            </article>
+          ))}
+        </div>
+        <div className="nri-cta">
+          <Link to="/insights/nri" className="btn outline">
+            Explore NRI intelligence
+          </Link>
+          <Link to="/contact" className="btn primary">
+            Schedule timezone-friendly call
+          </Link>
         </div>
       </section>
 

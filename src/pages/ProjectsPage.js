@@ -1,112 +1,87 @@
-import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 
 const ProjectsPage = () => {
-  const focusHighlights = [
-    'Absorption velocity tracked through quarterly Delhi NCR market updates.',
-    'IGBC / GRIHA aligned apartments to future-proof sustainability goals.',
-    'Ticket sizes curated for ₹3 Cr – ₹12 Cr mandates with concierge execution.',
+  const highlightStats = [
+    { value: '18 live', label: 'UHNI mandates', detail: 'Curated each quarter' },
+    { value: '₹2,450 Cr+', label: 'Capital placed', detail: 'Since 2021' },
+    { value: '5 pods', label: 'Concierge teams', detail: 'Advisory · design · diligence' },
   ];
 
   const microMarketFilters = ['Golf Course Road', 'Golf Course Ext.', 'Dwarka Expressway', 'SPR', 'Noida', 'Second homes'];
-
-  const trophyProjects = projects.slice(0, 3);
-  const remainingProjects = projects.slice(3);
-  const carouselImages = [
-    'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80',
-    'https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1400&q=80',
-    'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1400&q=80',
-    'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1400&q=80',
-    'https://images.unsplash.com/photo-1464146072230-91cabc968266?auto=format&fit=crop&w=1400&q=80',
-    'https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1400&q=80',
-    'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80',
-    'https://images.unsplash.com/photo-1499955085172-a104c9463ece?auto=format&fit=crop&w=1400&q=80',
-    'https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1400&q=80',
-    'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1400&q=80',
+  const serviceNotes = ['Deal rooms with valuation partners', 'Vastu + design customization support', 'Priority lending alliances with 5+ banks'];
+  const followUpCards = [
+    {
+      title: 'Developer collaboration desk',
+      summary: 'Structure premium launch alliances with boutique developers needing positioning, pricing, and activation intelligence.',
+      link: { label: 'See collaboration flow', to: '/services' },
+    },
+    {
+      title: 'Private capital concierge',
+      summary: 'Discreet briefings for UHNI and family office mandates with curated site-visits and after-sales governance.',
+      link: { label: 'Book a consultation', to: '/contact' },
+    },
   ];
-  const [carouselIndex, setCarouselIndex] = useState(0);
   const fallbackImage = 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1400&q=80';
+  const heroImage = projects[0]?.image ?? fallbackImage;
 
   const handleImageError = (event) => {
     event.target.onerror = null;
     event.target.src = fallbackImage;
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCarouselIndex((prev) => (prev + 1) % carouselImages.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [carouselImages.length]);
-
   return (
     <>
-      <section className="projects-hero dark-panel">
+      <section className="projects-hero projects-hero--simple">
         <div className="projects-hero__copy">
-          <p className="page-kicker">Featured portfolio</p>
-          <h1>Gurugram&rsquo;s marquee residences under Vistria Capital</h1>
+          <p className="page-kicker">Concierge portfolio</p>
+          <h1>Streamlined luxury mandates ready for quick diligence</h1>
           <p className="page-subtitle">
-            Explore curated assets across Dwarka Expressway, Golf Course Road, and emerging micro-markets. Every listing is diligence-ready
-            using institutional capital markets discipline.
+            Browse our most active mandates across Dwarka Expressway, Golf Course corridors, and select second-home destinations. Every
+            project listed here is vetted for legal clarity, ESG alignment, and design readiness.
           </p>
-          <div className="page-pills">
-            {focusHighlights.map((item) => (
-              <span key={item}>{item}</span>
+          <div className="projects-highlights">
+            {highlightStats.map((item) => (
+              <div key={item.label} className="projects-highlight-card">
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+                <p>{item.detail}</p>
+              </div>
             ))}
           </div>
-          <div className="projects-filters">
+          <div className="projects-chip-row">
             {microMarketFilters.map((filter) => (
-              <button key={filter}>{filter}</button>
+              <span key={filter}>{filter}</span>
             ))}
           </div>
         </div>
-        <div className="projects-hero__media">
-          <div className="projects-highlight__frame">
-            <iframe
-              src="https://www.youtube.com/embed/_sq0jrNSvj8?start=20"
-              title="Projects highlight"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              loading="lazy"
-            />
+        <div className="projects-hero__visual">
+          <img src={heroImage} alt="Featured luxury residence" loading="lazy" onError={handleImageError} />
+          <div className="projects-hero__note">
+            <span>Hands-on concierge</span>
+            <p>Guided discovery, negotiations, and after-sales oversight.</p>
           </div>
-          <p className="projects-highlight__caption">
-            A quick tour through marquee Gurugram residences we currently steward under the Vistria Capital portfolio.
-          </p>
         </div>
       </section>
 
-      <section className="project-carousel">
-        <div className="carousel-frame">
-          <img
-            src={carouselImages[carouselIndex]}
-            alt="Luxury residence"
-            key={carouselImages[carouselIndex]}
-            loading="lazy"
-            onError={handleImageError}
-          />
+      <section className="projects-gallery page-section">
+        <div className="section-header">
+          <h2>Available across NCR&rsquo;s most resilient corridors</h2>
+          <p>Trimmed to a simple grid so you can scan configuration, size, and ticket value instantly.</p>
         </div>
-        <div className="carousel-indicators">
-          {carouselImages.map((_, idx) => (
-            <span key={idx} className={idx === carouselIndex ? 'active' : ''} />
-          ))}
-        </div>
-      </section>
-
-      <section className="projects-showcase page-section">
-        <div className="trophy-grid">
-          {trophyProjects.map((project) => (
-            <article key={project.name} className="trophy-card">
+        <div className="projects-list">
+          {projects.map((project) => (
+            <article key={project.name} className="project-card project-card--simple">
               {project.image && (
-                <div className="trophy-media">
+                <div className="project-media">
                   <img src={project.image} alt={`${project.name} exterior`} loading="lazy" onError={handleImageError} />
                 </div>
               )}
-              <div className="trophy-content">
+              <div className="project-body">
                 <p className="micro-market">{project.location}</p>
-                <h2>{project.name}</h2>
+                <h3>{project.name}</h3>
                 <p>{project.configuration}</p>
-                <div className="trophy-stats">
+                <div className="project-meta">
                   <div>
                     <span>Size</span>
                     <strong>{project.size}</strong>
@@ -116,7 +91,7 @@ const ProjectsPage = () => {
                     <strong>{project.price}</strong>
                   </div>
                 </div>
-                <a href={project.link} target="_blank" rel="noreferrer">
+                <a href={project.link} className="text-link" target="_blank" rel="noreferrer">
                   View brochure ↗
                 </a>
               </div>
@@ -125,36 +100,39 @@ const ProjectsPage = () => {
         </div>
       </section>
 
-      <section className="projects-section">
-        <div className="projects-grid">
-          {remainingProjects.map((project) => (
-            <article key={project.name} className="project-card">
-              {project.image && (
-                <div className="project-media">
-                  <img src={project.image} alt={`${project.name} exterior`} loading="lazy" onError={handleImageError} />
-                </div>
-              )}
-              <header>
-                <h3>{project.name}</h3>
-                <p className="location">{project.location}</p>
-              </header>
-              <dl>
-                <div>
-                  <dt>Configuration</dt>
-                  <dd>{project.configuration}</dd>
-                </div>
-                <div>
-                  <dt>Size</dt>
-                  <dd>{project.size}</dd>
-                </div>
-                <div>
-                  <dt>Investment</dt>
-                  <dd>{project.price}</dd>
-                </div>
-              </dl>
-              <a href={project.link} className="learn-more" target="_blank" rel="noreferrer">
-                View brochure ↗
-              </a>
+      <section className="project-cta-panel page-section">
+        <div className="project-cta-content">
+          <span className="eyebrow">Need a curated shortlist?</span>
+          <h2>Tell us the ticket band, we&rsquo;ll bring 3 ready-to-close options</h2>
+          <p>
+            Share your preferred timeline, vastu requirements, or managed rental goals and we&rsquo;ll activate the mandate desk within 48 hours.
+            You can stay focussed on the decision while we coordinate data rooms and negotiations.
+          </p>
+          <div className="project-cta-actions">
+            <Link to="/contact" className="btn primary">
+              Talk to the desk
+            </Link>
+            <Link to="/services" className="btn outline">
+              Explore services
+            </Link>
+          </div>
+        </div>
+        <div className="project-cta-list">
+          {serviceNotes.map((note) => (
+            <p key={note}>{note}</p>
+          ))}
+        </div>
+      </section>
+
+      <section className="project-follow-up page-section">
+        <div className="project-follow-grid">
+          {followUpCards.map((card) => (
+            <article key={card.title} className="project-follow-card">
+              <h3>{card.title}</h3>
+              <p>{card.summary}</p>
+              <Link to={card.link.to} className="text-link">
+                {card.link.label} →
+              </Link>
             </article>
           ))}
         </div>

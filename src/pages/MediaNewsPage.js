@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const heroStats = [
   { value: '12+', label: 'Press features YTD' },
@@ -80,6 +81,24 @@ const newsroom = [
     detail:
       'Three partner developers achieved IGBC Platinum pre-certification with Vistria’s ESG advisory and materials roadmap.',
     date: 'February 2025',
+  },
+];
+
+const videoReels = [
+  {
+    title: 'What Makes BPTP Verti Greens Sector 102 so SPECIAL?',
+    summary: 'BPTP Amstoria Verti Greens — discover the vertical luxury features curated for Sector 102.',
+    src: 'https://www.youtube.com/embed/G4yRkoNT5nU',
+  },
+  {
+    title: 'Gurugram luxury micro-markets',
+    summary: 'Experion NOVA at Windchants – 4 BHK luxury apartments in Gurgaon.',
+    src: 'https://www.youtube.com/embed/koX8msEWBTI',
+  },
+  {
+    title: 'Bhowali Valley Chalets preview',
+    summary: 'TARC Ishva: Luxury living inspired by the golden ratio in Sector 63A, Gurgaon.',
+    src: 'https://www.youtube.com/embed/EfnnBRxR3h4',
   },
 ];
 
@@ -244,23 +263,63 @@ const MediaNewsPage = () => {
           ))}
         </div>
       </section>
+
+      <section className="video-reel page-section">
+        <div className="section-header">
+          <h2>Short-form insights &amp; walkthroughs</h2>
+          <p>Reels designed for Instagram-ready storytelling across Gurugram luxury assets and leisure escapes.</p>
+        </div>
+        <div className="reel-grid">
+          {videoReels.map((reel) => (
+            <article key={reel.title} className="reel-card">
+              <div className="reel-frame">
+                <iframe
+                  src={reel.src}
+                  title={reel.title}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <h3>{reel.title}</h3>
+              <p>{reel.summary}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="vastu-experience page-section">
+        <div className="vastu-media">
+          <iframe
+            src="https://www.youtube.com/embed/zPSwZAQnbIY"
+            title="Vastu aligned luxury living"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+        <div className="vastu-copy">
+          <h2>Vastu-aligned living for elevated wellbeing</h2>
+          <p>
+            Drawing on insights from Vastu consultants collaborating with our design advisory teams, Vistria
+            Capital curates residences that harmonise energy flow with luxury aesthetics. From orienting master
+            suites to integrating meditation decks, we ensure your next address nurtures balance, prosperity, and calm.
+          </p>
+          <ul>
+            <li>North-east wellness cores with diffused daylight and biophilic materials.</li>
+            <li>Kitchen and service zoning positioned along south-east quadrants for elemental alignment.</li>
+            <li>Customisable pooja and meditation suites enhanced with acoustic and lighting design.</li>
+            <li>On-demand Vastu audits during layout customization and fit-out stages.</li>
+          </ul>
+          <div>
+            <Link to="/contact" className="text-link">
+              Request a Vastu consultation →
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
 
 export default MediaNewsPage;
-        <div className="media-updates">
-          <h2>Delhi NCR Live Updates</h2>
-          <div className="marquee-track">
-            {[
-              'NCR luxury launches jump 22% YoY (Knight Frank)',
-              'Dwarka Expressway set for October ribbon cutting',
-              'Four new IGBC Platinum projects announced in Gurgaon',
-              'Premium inventory absorption crosses 70% in Q1 FY25',
-              'Golf Course Ext. leads price appreciation at 11% YoY',
-            ].map((item) => (
-              <span key={item}>{item}</span>
-            ))}
-          </div>
-          <p className="media-note">API-powered updates coming soon. Plug in your feed to replace this ticker.</p>
-        </div>

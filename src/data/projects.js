@@ -99,4 +99,24 @@ export const projects = [
     image:
       'https://images.unsplash.com/photo-1526481280695-3c4697f9f8c0?auto=format&fit=crop&w=1200&q=80',
   },
+  {
+    name: 'Camden One by DLF',
+    location: 'Sector 54, Golf Course Road, Gurugram',
+    configuration: '4 & 5 BHK duplex residences',
+    size: '3,950-4,820 sq ft',
+    price: '₹ 12.4 Cr* onwards',
+    link: 'https://www.dlf.in/residences',
+    image:
+      'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    name: 'Haven Ridge Chalets',
+    location: 'Bhowali & Mukteshwar, Kumaon',
+    configuration: 'Managed chalets & spa villas',
+    size: '2,450-3,200 sq ft',
+    price: '₹ 4.35 Cr* onwards',
+    link: 'https://andlayestates.com/second-homes.html',
+    image:
+      'https://images.unsplash.com/photo-1464890100898-a385f744067f?auto=format&fit=crop&w=1200&q=80',
+  },
 ];

@@ -1,29 +1,13 @@
-const blogPosts = [
-  {
-    title: 'How infrastructure is redefining luxury demand in NCR',
-    description:
-      'We examine the Dwarka Expressway launch, airport connectivity, and Metro expansions that are recasting absorption trends — guided by institutional “brighter way” theses.',
-    readTime: '6 min read',
-    category: 'Market analysis',
-  },
-  {
-    title: 'Designing residences around wellness and Vastu intelligence',
-    description:
-      'From light planning to elemental zoning, explore how Vistria Capital collaborates with consultants to integrate wellness-first spatial planning.',
-    readTime: '5 min read',
-    category: 'Design & wellbeing',
-  },
-  {
-    title: 'Sustainable materials checklist for high-rise developments',
-    description:
-      'A field note on low-VOC finishes, smart glazing, and energy-efficient HVAC systems sourced from partner developers raising IGBC benchmarks.',
-    readTime: '7 min read',
-    category: 'ESG & sustainability',
-  },
-];
+import { Link } from 'react-router-dom';
+import { blogs } from '../data/blogs';
 
-const BlogsPage = () => (
-  <>
+const blogTopics = ['Market outlook', 'Design & lifestyle', 'Capital desks', 'ESG', 'Second homes', 'NRI intelligence'];
+
+const BlogsPage = () => {
+  const [spotlightArticle, ...otherPosts] = blogs;
+
+  return (
+    <>
     <section className="page-hero soft-bg">
       <p className="page-kicker">Insights Blog</p>
       <h1>Thought leadership from the Vistria Capital desk</h1>
@@ -34,23 +18,58 @@ const BlogsPage = () => (
     </section>
 
     <section className="blogs page-section">
+      <div className="blogs-topics">
+        <p>Browse topics</p>
+        <div className="topics-row">
+          {blogTopics.map((topic) => (
+            <span key={topic}>{topic}</span>
+          ))}
+        </div>
+      </div>
+
+      <article className="blog-featured">
+        <div className="featured-header">
+          <span className="blog-category">{spotlightArticle.category}</span>
+          <div className="featured-tags">
+            {spotlightArticle.tags.map((tag) => (
+              <span key={tag} className="featured-tag">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+        <h2>{spotlightArticle.title}</h2>
+        <p>{spotlightArticle.summary}</p>
+        <div className="featured-meta">
+          <div>
+            <strong>{spotlightArticle.author}</strong>
+            <span>{spotlightArticle.date}</span>
+          </div>
+          <span className="blog-readtime">{spotlightArticle.readTime}</span>
+          <Link to={`/blogs/${spotlightArticle.slug}`} className="btn primary">
+            Read article
+          </Link>
+        </div>
+      </article>
+
       <div className="blog-grid">
-        {blogPosts.map((post) => (
-          <article key={post.title} className="blog-card">
+        {otherPosts.map((post) => (
+          <article key={post.slug} className="blog-card">
             <span className="blog-category">{post.category}</span>
             <h3>{post.title}</h3>
-            <p>{post.description}</p>
+            <p>{post.summary}</p>
             <div className="blog-footer">
               <span className="blog-readtime">{post.readTime}</span>
-              <button type="button" className="btn outline" disabled>
-                Coming soon
-              </button>
+              <Link to={`/blogs/${post.slug}`} className="btn outline">
+                Read article
+              </Link>
             </div>
           </article>
         ))}
       </div>
     </section>
   </>
-);
+  );
+};
 
 export default BlogsPage;
